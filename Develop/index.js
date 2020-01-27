@@ -53,8 +53,6 @@ inquirer.prompt(questions)
 
 
 
-
-
 //function writeToFile(fileName, data) {
 
 //}
