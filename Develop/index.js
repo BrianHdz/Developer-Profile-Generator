@@ -32,19 +32,23 @@ inquirer.prompt(questions)
   .then(answers => {
     let gitProfile = `${answers['profile']}`
     let favColor = `${answers['color']}`
-    console.log(gitProfile + ' & ' + favColor + " were your inputs")
+    console.log(gitProfile + ' & ' + favColor + " were your inputs"),
+
+      function (err) {
+        if (err) {
+          return console.log(err);
+        };
+      };
 
     // Setting up my API call to pull the GitHub account username
-    let queryUrl = `https://api.github.com/users/` + gitProfile;
+    const queryUrl = "https://api.github.com/users/" + gitProfile;
     console.log(queryUrl);
 
-  
     axios
-      .get(queryURL)
+      .get("https://api.github.com/users/BrianHdz")
       .then(function (res) {
         console.log(res.data);
       });
-
 
   });
 
