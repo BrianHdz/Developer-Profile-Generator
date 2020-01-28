@@ -32,7 +32,7 @@ inquirer.prompt(questions)
   .then(answers => {
     let gitProfile = `${answers['profile']}`
     let favColor = `${answers['color']}`
-    console.log(gitProfile + ' & ' + favColor + " were your inputs"),
+    console.log(gitProfile + ' & ' + favColor + " were your inputs!"),
 
       function (err) {
         if (err) {
@@ -44,6 +44,8 @@ inquirer.prompt(questions)
     const queryUrl = "https://api.github.com/users/" + gitProfile;
     console.log(queryUrl);
 
+    // Had trouble getting the queryURL const to work if I put it into the parenthesis below.
+    // Going to use this preset Axios call in the mean time.
     axios
       .get("https://api.github.com/users/BrianHdz")
       .then(function (res) {
