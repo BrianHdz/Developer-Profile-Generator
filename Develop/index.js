@@ -3,7 +3,7 @@ const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
 
-const generateHTML = require("generateHTML");
+const generateHTML = require("./generateHTML.js");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -54,7 +54,7 @@ inquirer.prompt(questions)
 
 
         // Call the generateHTML() here with FS.writeFile
-        generateHTML(data) 
+       generateHTML(answers) 
       
       
       });

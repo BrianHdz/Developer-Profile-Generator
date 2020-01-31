@@ -27,7 +27,7 @@
     }
   };
 
-function generateHTML(data) {
+  module.exports = function generateHTML(data) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -196,4 +196,4 @@ function generateHTML(data) {
 
 
 
-module.exports = generateHTML;
+// module.exports = generateHTML(data);
