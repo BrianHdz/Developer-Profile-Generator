@@ -1,25 +1,25 @@
-
+// ${colors[answers.color].headerBackground}
 
   const colors = {
-    green: {
+    GREEN: {
       wrapperBackground: "#E6E1C3",
       headerBackground: "#C1C72C",
       headerColor: "black",
       photoBorderColor: "#black"
     },
-    blue: {
+    BLUE: {
       wrapperBackground: "#5F64D3",
       headerBackground: "#26175A",
       headerColor: "white",
       photoBorderColor: "#73448C"
     },
-    pink: {
+    PINK: {
       wrapperBackground: "#879CDF",
       headerBackground: "#FF8374",
       headerColor: "white",
       photoBorderColor: "#FEE24C"
     },
-    red: {
+    RED: {
       wrapperBackground: "#DE9967",
       headerBackground: "#870603",
       headerColor: "white",
@@ -27,7 +27,7 @@
     }
   };
 
-  module.exports = function generateHTML(data) {
+  module.exports = function generateHTML(answers) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -54,7 +54,7 @@
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: ${answers.color};
          padding-top: 100px;
          }
          body {
@@ -96,8 +96,8 @@
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: ${answers.color};
+         color: ${answers.color};
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -108,7 +108,7 @@
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid ${answers.color};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -151,8 +151,8 @@
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: ${answers.color};
+           color: ${answers.color};
            margin: 20px;
          }
          
@@ -197,3 +197,9 @@
 
 
 // module.exports = generateHTML(data);
+
+// ${colors[answers.color].headerBackground}
+// ${colors[answers.color].headerColor}
+// ${colors[answers.color].photoBorderColor}
+// ${colors[answers.color].headerBackground}
+//  ${colors[answers.color].headerColor}

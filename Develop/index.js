@@ -51,7 +51,8 @@ inquirer.prompt(questions)
       .then(function (res) {
         console.log(`${answers['color']}`);
         // console.log(res)
-
+        const data = res.data;
+        // console.log(data);
 
         // Call the generateHTML() here with FS.writeFile
        generateHTML(answers) 
