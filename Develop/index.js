@@ -3,6 +3,8 @@ const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
 
+const generateHTML = require("generateHTML");
+
 const writeFileAsync = util.promisify(fs.writeFile);
 
 
@@ -44,13 +46,20 @@ inquirer.prompt(questions)
     const queryUrl = "https://api.github.com/users/" + gitProfile;
     console.log(queryUrl);
 
-    // Had trouble getting the queryURL const to work if I put it into the parenthesis below.
-    // Going to use this preset Axios call in the mean time.
     axios
-      .get("https://api.github.com/users/BrianHdz")
+      .get(`https://api.github.com/users/${answers['profile']}`)
       .then(function (res) {
-        console.log(res.data);
+        console.log(`${answers['color']}`);
+        // console.log(res)
+
+
+        // Call the generateHTML() here with FS.writeFile
+        generateHTML(data) 
+      
+      
       });
+
+      // Call the generatePDF() here after after the html file is made.
 
   });
 

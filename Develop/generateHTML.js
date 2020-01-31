@@ -1,29 +1,31 @@
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
+
+
+  const colors = {
+    green: {
+      wrapperBackground: "#E6E1C3",
+      headerBackground: "#C1C72C",
+      headerColor: "black",
+      photoBorderColor: "#black"
+    },
+    blue: {
+      wrapperBackground: "#5F64D3",
+      headerBackground: "#26175A",
+      headerColor: "white",
+      photoBorderColor: "#73448C"
+    },
+    pink: {
+      wrapperBackground: "#879CDF",
+      headerBackground: "#FF8374",
+      headerColor: "white",
+      photoBorderColor: "#FEE24C"
+    },
+    red: {
+      wrapperBackground: "#DE9967",
+      headerBackground: "#870603",
+      headerColor: "white",
+      photoBorderColor: "white"
+    }
+  };
 
 function generateHTML(data) {
   return `<!DOCTYPE html>
@@ -176,12 +178,12 @@ function generateHTML(data) {
       <body>
       <div class="wrapper">
       <div class="photo-header">
-        <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-        <p class="lead">I am from ${answers.location}.</p>
+        <h1 class="display-4">Hi! My name is ${data.name}</h1>
+        <p class="lead">I am from ${data.location}.</p>
         <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
         <ul class="list-group">
-          <li class="list-group-item">My GitHub username is ${answers.github}</li>
-          <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
+          <li class="list-group-item">My GitHub username is ${data.github}</li>
+          <li class="list-group-item">LinkedIn: ${data.linkedin}</li>
         </ul>
       </div>
     </div>
@@ -190,3 +192,8 @@ function generateHTML(data) {
 
     ;
 }
+
+
+
+
+module.exports = generateHTML;

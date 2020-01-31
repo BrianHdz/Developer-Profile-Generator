@@ -48,16 +48,21 @@ inquirer
             //This is where I'm currently stuck on this file.
             // Trying to make this work to append it to the generateHTML.js file. 
             // Then I'll plug the correct info into the appropriate locations in the HTML. 
-            const repoNames = res.data.map(function (repo) {
+            
+            
+            const repoNames = res.map(function (repo) {
+                console.log(repoNames);
+                
+
                 return repo.name;
+
             });
             // Console.log won't show up since the error appears up on line 51.
-            console.log(res);
-            console.log(data);
+           
 
             const repoNamesStr = repoNames.join("\n");
 
-            fs.writeFile("repos.txt", repoNamesSt, function (err) {
+            fs.appendFile("repos.txt", repoNamesSt, function (err) {
                 if (err) {
                     throw err;
                 }
