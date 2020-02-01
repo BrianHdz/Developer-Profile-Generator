@@ -27,7 +27,7 @@
     }
   };
 
-  module.exports = function generateHTML(answers) {
+  module.exports = function generateHTML(data, answers) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>

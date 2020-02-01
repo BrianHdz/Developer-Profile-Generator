@@ -52,15 +52,27 @@ inquirer.prompt(questions)
         console.log(`${answers['color']}`);
         // console.log(res)
         const data = res.data;
-        // console.log(data);
+        //  console.log(data);
 
-        // Call the generateHTML() here with FS.writeFile
-       generateHTML(answers) 
-      
-      
+        // Call the generateHTML() here with FS.writeFile 
+        let html = generateHTML(data, answers);
+
+        //writing to html file the using a callback to make that into a pdf.
+        fs.writeFile("developer.html", html, function (err) {
+          if (err) {
+            throw err;
+          }
+          console.log(`Saved developer.html`);
+          // here's where we convert to PDF
+          
+        });
+
+
+
+
       });
 
-      // Call the generatePDF() here after after the html file is made.
+    // Callback the generatePDF() here after after the html file is made.
 
   });
 
@@ -69,9 +81,7 @@ inquirer.prompt(questions)
 
 
 
-//function writeToFile(fileName, data) {
 
-//}
 
 // function init() {
 // };

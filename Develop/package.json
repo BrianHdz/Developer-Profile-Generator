@@ -12,7 +12,9 @@
     "axios": "^0.19.2",
     "fs": "0.0.1-security",
     "inquirer": "^7.0.4",
-    "util": "^0.12.1"
+    "util": "^0.12.1",
+    "electron": "^5.0.12",
+    "electron-html-to": "^2.6.0"
   },
   "devDependencies": {},
   "description": ""
